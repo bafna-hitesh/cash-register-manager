@@ -50,7 +50,7 @@ input {
 	display: block;
 	width: 30%;
 	margin: auto;
-	padding: 6px 15px;
+	padding: 6px 12px;
 	border-radius: 50px;
 	color: #ffffff;
 	background-color: #3b82f6;
@@ -62,6 +62,9 @@ input {
 }
 .button:hover {
 	transform: scale(0.99);
+}
+#error-msg{
+	margin-top: 1rem;
 }
 table {
 	margin: 1rem auto;
@@ -78,11 +81,8 @@ th,
 td {
 	margin: auto;
 	padding: 0.5rem 2rem;
-	border: 1px solid black;
+	border: 1px solid #000;
 }
-.cashgiven-section{
-	display: none;
-}
-#output{
+.cashgiven-section,#output{
 	display: none;
 }

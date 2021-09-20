@@ -14,8 +14,14 @@ const table = document.querySelector(".table");
 const noOfNotes = document.querySelectorAll(".no-of-notes");
 const availableNotes = [2000,500,200,100,50,20,10,5,1];
  
-nextButton.addEventListener("click", function nextStep(){
+inputBillAmount.addEventListener("click", function reset(){
+    nextButton.style.display = "block";
+    outputDiv.style.display= "none";
+    cashGivenSection.style.display = "none";
+})
 
+nextButton.addEventListener("click", function nextStep(){
+    inputCashGiven.value = "";
     var billAmount = Number(inputBillAmount.value);
     if(billAmount > 0){
         nextButton.style.display = "none";
@@ -49,10 +55,9 @@ function showMessage(text) {
 function returnCash(bill,cash){
     var  returnChange = cash - bill;
     outputDiv.style.display= "block";
-    for(var i = 0; i < availableNotes.length; i++){
-        var numberOfNotes = Math.trunc(
-            returnChange / availableNotes[i]
-        );
+    for(var i = 0; i < availableNotes.length; i++)
+    {
+        var numberOfNotes = Math.trunc(returnChange / availableNotes[i]);
         returnChange =returnChange % availableNotes[i];
         noOfNotes[i].innerText = numberOfNotes;
     }
